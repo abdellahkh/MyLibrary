@@ -12,7 +12,7 @@ public class Book {
 	private double rentalPrice;
 	private LocalDate borrowingDate;
 	private String language;
-	private BookTypeEnum bookType; //TODO : add to the constructor
+	private BookTypeEnum bookType; 
 	
 	
 	public String getTitle() {
@@ -105,25 +105,20 @@ public class Book {
 
 	}
 	
-	public Book(String title, String author, int totalPages, String language) {
 
+		public Book(String title, String author, int totalPages, Person person, int loanPeriod, double rentalPrice,
+			LocalDate borrowingDate, String language, BookTypeEnum bookType) {
 		super();
-
 		this.title = title;
-
 		this.author = author;
-
 		this.totalPages = totalPages;
-
+		this.person = person;
+		this.loanPeriod = loanPeriod;
+		this.rentalPrice = rentalPrice;
+		this.borrowingDate = borrowingDate;
 		this.language = language;
-
-		this.rentalPrice = 2.9; //TODO : est-ce la bonne methode?
-
-		//TODO: chercher pour ajouter le BOOKTYPE via le constructeur, à voir ???
-
-		}
-
-
+		this.bookType = bookType;
+	}
 
 		public BookTypeEnum getBookType() {
 
@@ -132,6 +127,14 @@ public class Book {
 		}
 
 
+
+		public String getLanguage() {
+			return language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
+		}
 
 		public void setBookType(BookTypeEnum bookType) {
 
