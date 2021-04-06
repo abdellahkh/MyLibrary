@@ -112,7 +112,7 @@ System.out.println("=====Bienvenu dans notre librairie=====");
 					showNumberOfMemberThatHaveABookBorrowed(people);
 					break;
 				case "d":
-					System.out.println("Selected nombres de membres qui ont un livre en emprunt,");
+					showCountBooksBorrowed(books);
 					break;
 				case "e":
 					System.out.println("Selected nombres de membres qui ont un livre en emprunt,");
@@ -163,6 +163,19 @@ System.out.println("=====Bienvenu dans notre librairie=====");
 			}
 
 			System.out.println("Il y a " + numberOfPeopleThatHaveABook + " personne(s) qui ont un livre emprunté");
+		}
+		
+		
+		// Affiche les livres en cours d'emprunts
+		private static void showCountBooksBorrowed(List<Book> books) {
+			int numberBorrowedBooks = 0;
+			
+			for (Book book : books) {
+				if(book.getPerson() != null) {
+					numberBorrowedBooks ++;
+				}
+			}
+			System.out.println("Il y a " + numberBorrowedBooks + " livres en cours d'emprunt");
 		}
 
     }
